@@ -1,4 +1,5 @@
 import { Project } from "../projects/ProjectsData";
+import githubLogo from "@/assets/github-logo.png";
 
 type Props = {
   project: Project;
@@ -10,24 +11,48 @@ const DetailProjectCard = ({ project }: Props) => {
   }
 
   return (
-    <section id={`project-${project.id}`} className="relative flex w-screen h-screen">
+    <section id={`project-${project.id}`} className="relative flex flex-col md:flex-row w-screen min-h-screen">
       {/* LEFT SIDE - image */}
-      <div className="w-1/2 h-full bg-blue-900 flex flex-col items-center justify-center p-12">
-        <img 
-          src={project.bigImage} 
-          alt="img" 
-          className="w-[80%] h-auto max-w-none object-cover" 
-        />
+
+      <div 
+      className="w-full md:w-1/2 bg-blue-900 flex flex-col items-center justify-center p-12">
+        <h1 className="text-5xl font-bold text-orange-400 leading-tight">
+          {project.name}
+        </h1>
+
+        <div className="w-full">
+          <img
+            src={project.bigImage}
+            alt="img"
+            className="w-full h-auto"
+          />
+        </div>
       </div>
 
-      {/* RIGHT SIDE  - text */}
-      <div className="flex flex-col items-center justify-center p-12">
-  <div className="bg-white p-8 shadow-lg flex flex-col items-center justify-center w-96">
-    <h2 className="text-2xl font-semibold text-gray-800">{project.shortDescription}</h2>
-    <p>{project.description}</p>
-    <p>{project.techStack}</p>
-  </div>
-</div>
+      {/* RIGHT SIDE - text */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-12">
+        <div className="bg-white p-8 shadow-lg flex flex-col justify-center w-full max-w-lg space-y-6">
+        <h2 className="text-xl font-semibold text-gray-800 mb-1">{project.name}</h2>
+        <h3 className="text-l font-light text-gray-500 mt-0">{project.description}</h3>
+
+          <hr className="border-t border-gray-300" />
+          <p>{project.intro}</p>
+          <p>{project.functionality}</p>
+          <p>{project.techStack}</p>
+
+          {project.otherLink && (
+            <a className="text-blue-600 hover:underline" href={project.otherLink} target="_blank" rel="noopener noreferrer">
+              {project.otherLinkText}
+            </a>
+          )}
+
+          {project.repo && (
+            <a href={project.repo} target="_blank" rel="noopener noreferrer">
+              <img src={githubLogo} alt="GitHub Repository" className="w-8 h-8 mt-4" />
+            </a>
+          )}
+        </div>
+      </div>
 
     </section>
   );
