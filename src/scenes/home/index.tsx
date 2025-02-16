@@ -31,12 +31,12 @@ const Home = () => {
       {/* LEFT SIDE */}
       <div 
       className="w-full md:w-1/2 h-full mt-30 md:mt-0 mb-10 md:mb-0 bg-blue-900 flex flex-col items-center justify-center">
-        <h1 className="text-6xl font-bold text-orange-400 leading-tight text-left -translate-x-18">
+        <h1 className="text-6xl font-bold text-orange-400 leading-tight text-left md:-translate-x-18">
           Vanja <br /> Vidmark
         </h1>
 
         {/* White Square */}
-        <div className="bg-white mt-8 ml-18 pt-8 shadow-lg w-70 h-78 flex items-center justify-center">
+        <div className="bg-white mt-8 md:ml-18 pt-8 shadow-lg w-70 h-78 flex items-center justify-center">
           <img
             src={ProfileImage}
             alt="Vanja Vidmark"
