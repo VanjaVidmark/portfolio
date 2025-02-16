@@ -59,7 +59,7 @@ const Home = () => {
           Hello! I'm Vanja Vidmark, a Computer Science student at KTH, currently in my final semester. I'm passionate about software development and eager to learn and explore new technologies.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed">
-          On this page, you'll find a collection of projects I've worked on — either for work, school, or just as a side project.
+          On this page, you'll find a collection of projects I've worked on — either for work, university, or as a fun side project.
         </p>
           
         </motion.div>
